@@ -1,16 +1,26 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <link rel="stylesheet" href="css/index.css" />
-
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=º, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>dafuqpage</title>
-</head> 
-<meta name="description" content="Aprende HTML y desarrollo web con las mejores prácticas." />
-<meta name="keywords" content="HTML, CSS, desarrollo web, SEO, accesibilidad" />
-<meta name="author" content="Tu Nombre" />
-<meta name="robots" content="index, follow" />
+
+    <meta name="description" content="Aprende HTML y desarrollo web con las mejores prácticas." />
+    <meta name="keywords" content="HTML, CSS, desarrollo web, SEO, accesibilidad" />
+    <meta name="author" content="Tu Nombre" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/assets/icons/favicon/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="/assets/icons/favicon/favicon.svg">
+    <link rel="shortcut icon" href="/assets/icons/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/favicon/apple-touch-icon.png">
+    <link rel="manifest" href="/assets/icons/favicon/site.webmanifest">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
 <body>
     <header>
         <h1>Mi Página Web</h1>
@@ -23,25 +33,28 @@
     </header>
 
     <main>
-        <section id="Inicio"></section>
-            <h2 class= "emphasis"></h2>Sobre Nosotros</h2>
+        <section id="Inicio">
+            <h2 class="emphasis">Sobre Nosotros</h2>
             <p>Bienvenido a nuestra página.</p>
         </section>
-        <section id="Productos"></section>
-            <h2 class="emphasis">Sobre nuestros Productos</h2>
-            <p>Son buenisimos</p>
-            <img width="480" height="270" src="./assets/assets/images/otoño.jpg" alt="foto colores" />
-            <img width="480" height="270" src="https://ik.imagekit.io/saraparaperez/images/oto%C3%B1o.jpg?updatedAt=1739457267429">
-            <video width="480" height="270" controls>
-                <source src="./assets/assets/videos/videochica.mp4" type="video/mp4" />
 
+        <section id="Productos">
+            <h3 class="emphasis">Sobre nuestros productos</h3>
+            <p>Son buenísimos.</p>
+            <img width="480" height="270" src="./assets/images/otoño.jpg" alt="foto colores">
+            <img width="480" height="270" src="https://ik.imagekit.io/saraparaperez/images/oto%C3%B1o.jpg?updatedAt=1739457267429" alt="Imagen en línea">
+            
+            <video width="480" height="270" controls>
+                <source src="./assets/videos/videochica.mp4" type="video/mp4">
+                Tu navegador no soporta videos.
+            </video>
         </section>
     </main>
 
     <footer>
         <p>&copy; 2025 Mi Web</p>
     </footer>
-</body>
-<p>Estoy muy feliz.</p>    
+
+    <p>Estoy muy feliz.</p>    
 </body>
 </html>
