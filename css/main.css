@@ -8,15 +8,15 @@
 /* Tipografías */
 body {
   font-family: "Poppins", "Roboto", sans-serif;
-  background-color: #f5f5f5;
-  color: #333;
+  background-color: #fdf6f0; /* beige claro */
+  color: #2e4e3f; /* verde oscuro */
   line-height: 1.6;
 }
 
 /* Header */
 header {
-  background-color: #222;
-  color: #fff;
+  background-color: #2e4e3f; /* verde oscuro */
+  color: #fdf6f0; /* beige claro */
   padding: 20px;
   text-align: center;
 }
@@ -34,13 +34,13 @@ nav ul {
 }
 
 nav a {
-  color: #ffffff;
+  color: #fdf6f0; /* beige */
   text-decoration: none;
   font-weight: 600;
 }
 
 nav a:hover {
-  color: #ffcc00;
+  color: #9cc6a0; /* verde pastel */
 }
 
 /* Secciones */
@@ -55,7 +55,7 @@ main h3 {
 }
 
 .emphasis {
-  color: #ff6600;
+  color: #3d6b57; /* verde más fuerte */
   font-weight: 700;
 }
 
@@ -64,7 +64,7 @@ img,
 video {
   margin: 15px;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(46, 78, 63, 0.2);
 }
 
 /* Flexbox */
@@ -76,12 +76,13 @@ video {
 }
 
 .item {
-  background-color: #ffcc00;
+  background-color: #9cc6a0; /* verde pastel */
   padding: 20px;
   flex: 1;
   text-align: center;
   font-weight: bold;
   border-radius: 8px;
+  color: #2e4e3f; /* verde oscuro */
 }
 
 /* Grid */
@@ -94,12 +95,12 @@ video {
 }
 
 .grid-item {
-  background-color: #00bcd4;
+  background-color: #3d6b57; /* verde fuerte */
   padding: 20px;
   text-align: center;
   font-weight: bold;
   border-radius: 8px;
-  color: #fff;
+  color: #fdf6f0; /* beige */
 }
 
 /* Toggle switch */
@@ -122,7 +123,7 @@ video {
 .nav-menu-icon::before,
 .nav-menu-icon::after {
   display: block;
-  background: #222;
+  background: #2e4e3f;
   height: 3px;
   width: 25px;
   border-radius: 2px;
@@ -146,8 +147,8 @@ video {
 
 /* Footer */
 footer {
-  background-color: #222;
-  color: #fff;
+  background-color: #2e4e3f;
+  color: #fdf6f0;
   text-align: center;
   padding: 15px;
   margin-top: 40px;
