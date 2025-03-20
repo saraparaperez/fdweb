@@ -8,14 +8,14 @@
 /* Tipografías */
 body {
   font-family: "Poppins", "Roboto", sans-serif;
-  background-color: #fdf6f0; /* beige claro */
+  background-color: var(--background); /* beige claro */
   color: #2e4e3f; /* verde oscuro */
   line-height: 1.6;
 }
 
 /* Header */
 header {
-  background-color: #2e4e3f; /* verde oscuro */
+  background-color: var(--background); /* verde oscuro */
   color: #fdf6f0; /* beige claro */
   padding: 20px;
   text-align: center;
