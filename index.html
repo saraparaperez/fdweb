@@ -1,60 +1,135 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>dafuqpage</title>
 
-    <meta name="description" content="Aprende HTML y desarrollo web con las mejores prácticas." />
-    <meta name="keywords" content="HTML, CSS, desarrollo web, SEO, accesibilidad" />
+    <meta
+      name="description"
+      content="Aprende HTML y desarrollo web con las mejores prácticas."
+    />
+    <meta
+      name="keywords"
+      content="HTML, CSS, desarrollo web, SEO, accesibilidad"
+    />
     <meta name="author" content="Tu Nombre" />
     <meta name="robots" content="index, follow" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="/assets/icons/favicon/favicon-96x96.png" sizes="96x96">
-    <link rel="icon" type="image/svg+xml" href="/assets/icons/favicon/favicon.svg">
-    <link rel="shortcut icon" href="/assets/icons/favicon/favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/favicon/apple-touch-icon.png">
-    <link rel="manifest" href="/assets/icons/favicon/site.webmanifest">
+    <link
+      rel="icon"
+      type="image/png"
+      href="/assets/icons/favicon/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="/assets/icons/favicon/favicon.svg"
+    />
+    <link rel="shortcut icon" href="/assets/icons/favicon/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/assets/icons/favicon/apple-touch-icon.png"
+    />
+    <link rel="manifest" href="/assets/icons/favicon/site.webmanifest" />
 
     <!-- CSS -->
-    <link rel="stylesheet" href="css/index.css">
-</head>
+    <link rel="stylesheet" href="css/index.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<body>
+  <body>
     <header>
-        <h1>Mi Página Web</h1>
-        <nav>
-            <ul>
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Contacto</a></li>
-            </ul>
-        </nav>
+      <h1>Mi Página Web</h1>
+      <nav>
+        <ul>
+          <li><a href="#">Inicio</a></li>
+          <li><a href="#">Contacto</a></li>
+        </ul>
+      </nav>
     </header>
 
     <main>
-        <section id="Inicio">
-            <h2 class="emphasis">Sobre Nosotros</h2>
-            <p>Bienvenido a nuestra página.</p>
-        </section>
+      <section id="Inicio">
+        <h2 class="emphasis">Sobre Nosotros</h2>
+        <p>Bienvenido a nuestra página.</p>
+      </section>
 
-        <section id="Productos">
-            <h3 class="emphasis">Sobre nuestros productos</h3>
-            <p>Son buenísimos.</p>
-            <img width="480" height="270" src="./assets/images/otoño.jpg" alt="foto colores">
-            <img width="480" height="270" src="https://ik.imagekit.io/saraparaperez/images/oto%C3%B1o.jpg?updatedAt=1739457267429" alt="Imagen en línea">
-            
-            <video width="480" height="270" controls>
-                <source src="./assets/videos/videochica.mp4" type="video/mp4">
-                Tu navegador no soporta videos.
-            </video>
-        </section>
+      <section id="Productos">
+        <h3 class="emphasis">Sobre nuestros productos</h3>
+        <p>Son buenísimos.</p>
+        <img
+          width="480"
+          height="270"
+          src="./assets/images/otoño.jpg"
+          alt="foto colores"
+        />
+        <img
+          width="480"
+          height="270"
+          src="https://ik.imagekit.io/saraparaperez/images/oto%C3%B1o.jpg?updatedAt=1739457267429"
+          alt="Imagen en línea"
+        />
+
+        <video width="480" height="270" controls>
+          <source src="./assets/videos/videochica.mp4" type="video/mp4" />
+          Tu navegador no soporta videos.
+        </video>
+      </section>
+      <section id="inicio">
+        <h2 class="emphasis">Sobre Nosotros</h2>
+        <p>Bienvenido a nuestra pagina</p>
+      </section>
+      <section id="productos">
+        <h2 class="emphasis">Sobre nuestros productos</h2>
+        <p>Son buenísimos</p>
+      </section>
+      <div class="contenedor">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+      </div>
+      <div class="grid-container">
+        <div class="grid-item">1</div>
+        <div class="grid-item">2</div>
+        <div class="grid-item">3</div>
+      </div>
+      <input type="checkbox" id="theme-toggle" class="theme-toggle" />
+      <input class="nav-menu-btn" type="checkbox" id="nav-menu-btn" />
+      <label class="nav-menu" for="nav-menu-btn">
+        <span class="nav-menu-icon"></span>
+      </label>
+
+      <!-- Sección de Contacto -->
+      <section id="contacto">
+        <h2>Contacto</h2>
+        <p>
+          Escríbenos a
+          <a href="mailto:saraparaperez@gmail.com">saraparaperez@gmail.com</a> o
+          llámanos al <a href="tel:+34 606051176">+34 606051176</a>.
+        </p>
+      </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 Mi Web</p>
+      <p>&copy; 2025 Mi Web</p>
     </footer>
-
-    <p>Estoy muy feliz.</p>    
-</body>
+  </body>
+  <p>Estoy muy feliz.</p>
 </html>
