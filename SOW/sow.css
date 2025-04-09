@@ -1,0 +1,108 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Colores y tipografía */
+body {
+  font-family: "Barlow Condensed", sans-serif;
+  background-color: #f5f5dc; /* beige */
+  color: #001f3f; /* azul marino */
+  line-height: 1.6;
+  text-align: justify;
+  padding: 1rem;
+}
+
+/* Títulos */
+h1,
+h2,
+h3 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-top: 2rem;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #001f3f;
+}
+
+/* Navegación */
+.indice {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 1.5rem 0;
+  flex-wrap: wrap;
+}
+
+.indice a {
+  color: #001f3f;
+  text-decoration: none;
+  font-weight: bold;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.3s;
+}
+
+.indice a:hover {
+  border-color: #001f3f;
+}
+
+/* Secciones */
+section {
+  margin-bottom: 4rem;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2rem;
+  background-color: #ffffffcc;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Imágenes alineadas */
+section img {
+  width: 100%;
+  max-width: 480px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+section a {
+  text-decoration: none;
+  color: inherit;
+}
+
+section .gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2rem;
+  background-color: #001f3f;
+  color: #f5f5dc;
+  font-weight: 500;
+}
+
+/* Tipografía externa */
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700&display=swap");
