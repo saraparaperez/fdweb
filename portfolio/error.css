@@ -1,4 +1,3 @@
-/* Reseteo básico para asegurar ocupación total */
 html,
 body {
   height: 100%;
@@ -6,7 +5,6 @@ body {
   padding: 0;
 }
 
-/* Clase específica para la página de error */
 .error-page {
   display: flex;
   justify-content: center;
