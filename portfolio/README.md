@@ -39,3 +39,7 @@ fdweb/
 ├── LICENSE  
 ├── README.md  
 └── site.webmanifest
+
+## Licencia
+
+Distribuido bajo la licencia MIT. Ver `LICENSE` para más información.
