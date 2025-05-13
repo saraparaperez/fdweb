@@ -9,7 +9,7 @@ html {
   overflow-y: scroll;
 }
 
-¡
+
 * {
   margin: 0;
   padding: 0;
@@ -427,6 +427,72 @@ body.error-page {
 
   .form-group {
     width: 90%;
+  }
+
+  .carousel {
+    width: 660px;
+  }
+
+  .carousel-track {
+    width: calc(6 * 220px);
+    animation: scrollCarouselMobile 30s linear infinite;
+  }
+
+  .carousel-track img {
+    width: 200px;
+    height: 200px;
+  }
+
+  @keyframes scrollCarouselMobile {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-1320px);
+    }
+  }
+}
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  nav ul li {
+    margin-left: 0;
+    margin-bottom: 10px;
+  }
+
+  header .container {
+    flex-direction: column;
+  }
+
+  .landing h1 {
+    font-size: 2.5rem;
+  }
+
+  .landing p {
+    font-size: 1rem;
+  }
+
+  .projects {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .project {
+    width: 100%;
+  }
+
+  .about-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-image img {
+    width: 200px;
+    height: 200px;
   }
 
   .carousel {
