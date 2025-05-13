@@ -28,8 +28,7 @@ fdweb/
 │ ├── fonts/  
 │ ├── icons/
 │ │ └── favicon/  
-│ ├── imagenes/  
-│ └──  
+│ └── imagenes/
 │
 ├── css/
 │ ├── style.css  
@@ -38,7 +37,7 @@ fdweb/
 ├── .gitignore  
 ├── LICENSE  
 ├── README.md  
-└── site.webmanifest
+└── manifest.json
 
 ## Licencia
 
