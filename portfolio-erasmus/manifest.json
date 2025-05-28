@@ -1,0 +1,21 @@
+{
+  "name": "Portfolio Sara Pérez",
+  "short_name": "SaraPortfolio",
+  "description": "Portfolio personal de Sara Pérez para la asignatura de Fundamentos del Diseño Web",
+  "start_url": "/fdweb/portfolio/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffd3d3",
+  "icons": [
+    {
+      "src": "/fdweb/portfolio/assets/icons/favicon/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/fdweb/portfolio/assets/icons/favicon/android-chrome-192x192.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
