@@ -20,7 +20,11 @@ fdweb/
 | └── sobre-mi.html  
 │ └── trabajos.html
 | └── detalle-proyecto1.html
-| └── detalle-proyecto2
+| └── detalle-proyecto2.html
+| └── detalle-proyecto3.html
+| └── detalle-proyecto4.html
+| └── detalle-proyecto5.html
+| └── detalle-proyecto6.html
 | └── 404.html
 | └── contacto.html
 |
