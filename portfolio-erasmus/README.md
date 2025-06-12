@@ -2,7 +2,7 @@
 
 Este es mi proyecto web para la asignatura de Fundamentos del Diseño Web.
 
-🔗 [Ver demo en vivo](https://saraparaperez.github.io/fdweb/portfolio/)
+🔗 [Ver demo en vivo](https://saraparaperez.github.io/fdweb/portfolio-erasmus/)
 
 ## Tecnologías utilizadas
 
@@ -32,11 +32,9 @@ fdweb/
 │
 ├── css/
 │ ├── style.css  
-│ └── 404.css  
+│
 │
 ├── .gitignore  
-├── LICENSE  
-├── README.md  
 └── manifest.json
 
 ## Licencia
