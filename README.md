@@ -1,6 +1,6 @@
 # Portfolio Erasmus – Sara Parapérez
 
-🎓 *Proyecto de portfolio personal realizado para el módulo de Fundamentos del Desarrollo Web (Erasmus)*
+🎓 *Proyecto de portfolio personal realizado para el módulo de Fundamentos del Desarrollo Web*
 
 🌐 [Ver el sitio en vivo](https://saraparaperez.github.io/fdweb/portfolio-erasmus/)
 
@@ -20,7 +20,8 @@ Este es un portfolio web desarrollado para mostrar mis trabajos, habilidades, y 
 
 - **HTML5** – Estructura de contenido semántica.
 - **CSS3** – Estilos personalizados con animaciones y media queries para responsive design.
-- **JavaScript (mínimo uso)** – Comportamiento de navegación y posibles interacciones dinámicas (si aplica).
+- **Git & GitHub**
+- **GitHub Pages**
 - **Fuentes externas** – Google Fonts & fuentes TTF locales.
 
 ## 📁 Estructura del proyecto
