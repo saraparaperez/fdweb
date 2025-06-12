@@ -185,7 +185,7 @@ nav ul li a:hover {
 
 .project-image img {
   width: 100%;
-
+  height: 450px;
   object-fit: cover;
 }
 
@@ -463,8 +463,7 @@ body.error-page {
   }
 
   .carousel {
-    width: 100%;
-    max-width: 660px;
+    width: 660px;
   }
 
   .carousel-track {
