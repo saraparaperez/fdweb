@@ -179,6 +179,15 @@ nav ul li a:hover {
   background-color: #fff;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
+  min-height: 600px;
+}
+
+.project-description {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: space-between;
 }
 
 .project:hover {
@@ -191,13 +200,6 @@ nav ul li a:hover {
   object-fit: cover;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
-}
-
-.project-description {
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1; /* para que ocupe todo el espacio restante */
 }
 
 .project-description h3 {
