@@ -286,8 +286,8 @@ a {
   margin-top: 60px;
 
   /* CLAVE: Mantenemos el offset de 35vw y reducimos el padding derecho para compensar */
-  padding-left: 10vw;
-  padding-right: 10vw (--padding-sides);
+  padding-left: 5vw;
+  padding-right: 5vw;
 
   display: grid;
   /* CLAVE: Ahora solo necesitamos 3 columnas iguales, ya que el offset está en el padding-left */
@@ -665,6 +665,150 @@ a {
     padding-top: 0;
   }
 }
+/*PROYECTOS/*
+/* --- ESTILOS GENERALES DE PÁGINA DE PROYECTO --- */
+
+.project-main-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* Asegura que las columnas empiecen arriba */
+  padding: 30px var(--padding-sides);
+  flex-grow: 1;
+}
+
+/* === COLUMNA IZQUIERDA: FIJA (Información del Proyecto) === */
+
+.project-left-column {
+  /* CLAVE: position: sticky para que se quede fija al hacer scroll */
+  position: sticky;
+  top: 0;
+
+  width: 30vw; /* Ancho similar al de About Me */
+  margin-left: 5vw;
+  padding-top: 20px;
+  padding-right: 20px;
+
+  /* Aseguramos que la columna sea lo suficientemente alta para mantener el sticky */
+  min-height: 100vh;
+}
+
+.project-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-transform: lowercase;
+  margin-bottom: 20px;
+}
+
+.project-details p {
+  font-size: 0.95rem;
+  margin-bottom: 5px;
+}
+
+.project-about-block {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.project-about-block h3 {
+  font-size: 1rem;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.project-about-block p {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  margin-bottom: 10px;
+}
+
+.project-email {
+  font-size: 0.9rem;
+  margin-top: 30px;
+  color: #555;
+}
+
+/* === COLUMNA DERECHA: CARRUSEL VERTICAL (Deslizable) === */
+
+.project-right-column {
+  flex-grow: 1;
+  max-width: 55%; /* Ocupa el resto del espacio */
+  padding-top: 20px;
+  /* Esta columna es la que contendrá el scroll */
+}
+
+.project-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  /* Espacio entre cada imagen */
+  margin-bottom: 40px;
+}
+
+/* Para un bloque de imagen con texto descriptivo debajo */
+.image-with-caption {
+  margin-bottom: 40px;
+}
+
+.image-caption {
+  font-size: 0.85rem;
+  color: #555;
+  margin-top: -30px; /* Acercar la descripción a la imagen */
+  padding-left: 10px;
+}
+
+/* --- Responsive (Asegurar que funcione en móviles) --- */
+@media (max-width: 1000px) {
+  /* --- ESTILOS GENERALES DE PÁGINA DE PROYECTO (AJUSTADO PARA SCROLL LOCAL) --- */
+
+  .project-main-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    /* CLAVE 1: Darle la altura de la ventana (Viewport Height) */
+    height: 100vh;
+
+    /* El padding se mantiene, pero solo afecta el espacio horizontal dentro del viewport */
+    padding: 30px var(--padding-sides);
+
+    /* IMPORTANTE: Permitir que el scroll se gestione dentro de las columnas */
+    overflow: hidden;
+  }
+
+  /* === COLUMNA IZQUIERDA: FIJA (Información del Proyecto) === */
+  .project-left-column {
+    /* CLAVE 2: Quitamos position: sticky porque el scroll principal ya no existe */
+    position: sticky;
+
+    /* Le damos la misma altura que el contenedor padre */
+    height: 100%;
+
+    width: 30vw;
+    margin-left: 5vw;
+    padding-top: 20px;
+    padding-right: 20px;
+  }
+  /* La información del proyecto debe quedar compacta aquí (ya lo ajustaste antes) */
+
+  /* === COLUMNA DERECHA: CARRUSEL VERTICAL (SOLO ESTA BAJA) === */
+
+  .project-right-column {
+    flex-grow: 1;
+    max-width: 55%;
+    padding-top: 20px;
+
+    /* CLAVE 3: Define la altura máxima que tendrá la columna (el resto se oculta) */
+    height: 100%;
+
+    /* CLAVE 4: Habilita el scroll vertical SÓLO dentro de esta columna */
+    overflow-y: scroll;
+
+    /* Opcional: Esto ayuda a ocultar la barra de scroll de forma más limpia */
+    padding-right: 15px;
+  }
+  /* Las imágenes dentro (.project-image) se mantienen igual, solo se desplazan dentro de este contenedor */
+}
 /* --- 4. PIE DE PÁGINA (FOOTER) --- */
 
 .footer {
@@ -696,4 +840,24 @@ a {
 
 .right-info {
   text-align: right;
+}
+
+/* --- ANIMACIONES DE ENTRADA AL CARGAR LA PÁGINA (INDEX) --- */
+
+/* 1. Definición de la Animación: Deslizar hacia arriba con Fade-in */
+@keyframes slideInUpFade {
+  0% {
+    opacity: 0;
+    transform: translateY(20px); /* Empieza 20px abajo */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* Termina en su posición original */
+  }
+}
+
+/* 2. Estilos para los Elementos Animados (ocultos inicialmente) */
+.animated-item {
+  opacity: 0; /* CLAVE: Asegura que estén invisibles al inicio */
+  animation-fill-mode: forwards; /* Mantiene el estado final (opacity: 1) */
 }

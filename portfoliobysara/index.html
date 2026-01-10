@@ -31,11 +31,11 @@
       <section class="projects-container">
         <article class="project-card">
           <div class="image-wrapper">
-            <img src="imagen_proyecto_1.png" alt="Olenna Branding" />
+            <img src="assets/images/escaparate escape.png" alt="Escape" />
             <div class="project-info">
-              <h3>Olenna</h3>
+              <h3>escape</h3>
               <p class="category">Branding, Packaging</p>
-              <p class="details">Project Info</p>
+              <p class="details">wine bottle</p>
               <p class="year">2025</p>
             </div>
           </div>
@@ -46,12 +46,30 @@
 
         <article class="project-card">
           <div class="image-wrapper">
-            <img src="imagen_proyecto_2.png" alt="Garabato Packaging" />
+            <img
+              src="assets/images/foto con titulo.png"
+              alt="between light and skin"
+            />
             <div class="project-info">
-              <h3>Garabato</h3>
-              <p class="category">branding, papelería</p>
-              <p class="details">Logotipo</p>
-              <p class="year">2024</p>
+              <h3>between light and skin</h3>
+              <p class="category">photography, editorial</p>
+              <p class="details">photobook</p>
+              <p class="year">2025</p>
+            </div>
+          </div>
+          <div class="project-info-visible">
+            <p class="year">2025</p>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="image-wrapper">
+            <img src="assets/images/helvetica.png" alt="Helvetica" />
+            <div class="project-info">
+              <h3>helvetica</h3>
+              <p class="category">editorial</p>
+              <p class="details">leaflet</p>
+              <p class="year">2026</p>
             </div>
           </div>
           <div class="project-info-visible">
@@ -61,31 +79,61 @@
 
         <article class="project-card">
           <div class="image-wrapper">
-            <img src="imagen_proyecto_3.png" alt="Orbital Barrier Producto" />
+            <img src="assets/images/tarjetas ing tela.png" alt="Ing Rebrand" />
             <div class="project-info">
-              <h3>Orbital Barrier</h3>
-              <p class="category">branding, papelería</p>
-              <p class="details">Logotipo</p>
+              <h3>ING Rebrand</h3>
+              <p class="category">branding</p>
+              <p class="details">brand manual</p>
               <p class="year">2024</p>
             </div>
           </div>
           <div class="project-info-visible">
-            <p class="year">2024</p>
+            <p class="year">2026</p>
           </div>
         </article>
 
         <article class="project-card">
           <div class="image-wrapper">
-            <img src="imagen_proyecto_4.png" alt="Community Service Diseño" />
+            <img src="imagen_proyecto_5.png" alt="Ejemplo 5" />
             <div class="project-info">
-              <h3>Community Service</h3>
-              <p class="category">Diseño Digital</p>
-              <p class="details">UX/UI</p>
-              <p class="year">2024</p>
+              <h3>Otro Proyecto</h3>
+              <p class="category">Categoría</p>
+              <p class="details">Detalles</p>
+              <p class="year">2023</p>
             </div>
           </div>
           <div class="project-info-visible">
-            <p class="year">2024</p>
+            <p class="year">2023</p>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="image-wrapper">
+            <img src="imagen_proyecto_5.png" alt="Ejemplo 5" />
+            <div class="project-info">
+              <h3>Otro Proyecto</h3>
+              <p class="category">Categoría</p>
+              <p class="details">Detalles</p>
+              <p class="year">2023</p>
+            </div>
+          </div>
+          <div class="project-info-visible">
+            <p class="year">2023</p>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="image-wrapper">
+            <img src="imagen_proyecto_5.png" alt="Ejemplo 5" />
+            <div class="project-info">
+              <h3>Otro Proyecto</h3>
+              <p class="category">Categoría</p>
+              <p class="details">Detalles</p>
+              <p class="year">2023</p>
+            </div>
+          </div>
+          <div class="project-info-visible">
+            <p class="year">2023</p>
           </div>
         </article>
 
@@ -118,5 +166,34 @@
         <p>Sara Para Pérez</p>
       </div>
     </footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const introText = document.querySelector(".intro-text");
+        const projectCards = document.querySelectorAll(".project-card");
+
+        const animateElement = (element, delay) => {
+          if (element) {
+            setTimeout(() => {
+              // Aplica la animación CSS 'slideInUpFade'
+              element.style.animation = `slideInUpFade 0.8s ease-out 0s forwards`;
+            }, delay * 1000);
+          }
+        };
+
+        // Configuración de Tiempos
+        const introDelay = 0.3;
+        const cardStartDelay = 0.6;
+        const cardStagger = 0.15; // Retraso entre cada proyecto
+
+        // 1. Animar el texto introductorio
+        animateElement(introText, introDelay);
+
+        // 2. Animar los 8 proyectos con un retraso escalonado
+        projectCards.forEach((card, index) => {
+          const delay = cardStartDelay + index * cardStagger;
+          animateElement(card, delay);
+        });
+      });
+    </script>
   </body>
 </html>
