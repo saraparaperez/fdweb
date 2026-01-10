@@ -1,0 +1,699 @@
+/* --- ESTILOS BASE Y TIPOGRAFÍA --- */
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap");
+/* Nota: Reemplaza con tus fuentes reales. He usado Roboto como un ejemplo genérico. */
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400;1,700&display=swap");
+
+:root {
+  --color-text: #222;
+  --color-background: #fff;
+  --font-serif: "Georgia", serif; /* Para el logo y texto principal */
+  --font-sans: "Roboto", sans-serif; /* Para la navegación y detalles */
+  --padding-sides: 5vw; /* Padding lateral general */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-text);
+  background-color: var(--color-background);
+  line-height: 1.6;
+}
+/* === REGLAS PARA LA VISTA DE 100VH (SOLO EN EL INDEX) === */
+.index-page {
+  height: 100vh;
+  overflow-y: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.contact-page {
+  height: 100vh;
+  overflow-y: hidden;
+  display: flex;
+  flex-direction: column;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* --- 1. BARRA DE NAVEGACIÓN --- */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* Reducimos el padding vertical */
+  padding: 15px var(--padding-sides);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--color-background);
+}
+
+.logo {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  font-weight: thin;
+}
+
+.nav-links a {
+  margin-left: 20px;
+  /* CAMBIO: Aumentamos el tamaño de la fuente */
+  font-size: 0.9rem;
+  text-transform: lowercase;
+}
+/* --- 1. ESTILOS BASE DE LOS ENLACES DE NAVEGACIÓN --- */
+
+.nav-links a {
+  margin-left: 20px;
+  font-size: 0.9rem;
+  text-transform: lowercase;
+
+  /* 1. Base para el Subrayado Personalizado: Usaremos una línea transparente */
+  border-bottom: 1px solid transparent;
+
+  /* 2. CLAVE: Hacer que el enlace se comporte como un bloque para el borde */
+  display: inline-block;
+
+  /* 3. Transición suave para el efecto hover y active */
+  transition: border-bottom 0.3s ease;
+}
+
+/* --- 2. EFECTO HOVER --- */
+
+.nav-links a:hover {
+  /* Al hacer hover, la línea se vuelve visible con el color del texto */
+  border-bottom: 1px solid var(--color-text);
+}
+
+/* --- 3. ESTADO ACTIVO (Página Actual) --- */
+
+.nav-links a.active {
+  /* CLAVE: Aplicar la misma línea visible al enlace de la página actual */
+  border-bottom: 1px solid var(--color-text);
+
+  /* Opcional: Si quieres que el texto sea más grueso en la página activa */
+  font-weight: 700;
+}
+
+/* Simulación de la barra de desplazamiento/botón */
+.scroll-indicator {
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--color-text);
+}
+
+/* --- 2. CONTENIDO PRINCIPAL: TEXTO INTRODUCTORIO --- */
+
+.intro-text {
+  text-align: left;
+  /* Reducimos el margen superior */
+  margin-top: 25px;
+  margin-left: 35vw;
+  margin-right: var(--padding-sides);
+
+  font-size: 0.85rem; /* Hacemos el texto más pequeño */
+  line-height: 1.4;
+  font-family: var(--font-sans);
+  width: 45%;
+  max-width: 550px;
+}
+/* --- 3. CARRUSEL/LISTA DE PROYECTOS --- */
+
+.projects-container {
+  display: flex;
+  /* Mantenemos el scroll horizontal aquí si quieres el carrusel */
+  overflow-x: scroll;
+  /* Reducimos el margen superior */
+  margin-top: 30px;
+
+  /* Ocupa el espacio restante antes del footer */
+  flex-grow: 1;
+
+  margin-left: 0;
+  margin-right: var(--padding-sides);
+  padding-left: 0;
+
+  /* Reducimos el padding inferior */
+  padding-bottom: 55px;
+  /* Reducimos el espacio entre proyectos */
+  gap: 20px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.projects-container::-webkit-scrollbar {
+  display: none; /* Mejoramos la ocultación del scrollbar */
+}
+.projects-container {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.project-card:first-child {
+  margin-left: 35vw;
+}
+
+.project-card {
+  flex-shrink: 0;
+  width: 250px; /* Reducimos el ancho de la tarjeta */
+  position: relative;
+  cursor: pointer;
+}
+
+.image-wrapper {
+  position: relative;
+  /* Reducimos la altura de la imagen para liberar espacio vertical */
+  height: 250px;
+  overflow: hidden;
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+/* Información del proyecto que se revela/baja */
+.project-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  /* Reducimos ligeramente el padding interno */
+  padding: 15px 15px;
+  background: var(--color-background);
+
+  /* La clave del efecto: se inicia fuera del contenedor (-100%) y sube */
+  transform: translateY(100%);
+  transition: transform 0.4s ease;
+  z-index: 5;
+  text-align: left;
+  border-top: 1px solid #ddd;
+}
+
+.project-info h3 {
+  font-size: 1rem; /* Reducimos el tamaño de la fuente */
+  margin-bottom: 3px;
+}
+
+.project-info .category {
+  font-size: 0.8rem; /* Reducimos el tamaño de la fuente */
+  color: #555;
+  margin-bottom: 8px;
+}
+
+.project-info .details {
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+
+.project-info .year {
+  font-size: 0.7rem; /* Reducimos el tamaño de la fuente */
+  color: #999;
+  margin-top: 3px;
+}
+
+/* Información del año visible permanentemente (como en la imagen) */
+.project-info-visible {
+  padding-top: 8px;
+  text-align: right;
+  font-size: 0.7rem; /* Reducimos el tamaño de la fuente */
+}
+
+/* --- EFECTO HOVER --- */
+
+.project-card:hover .project-info {
+  /* La info baja/sube cubriendo la parte inferior */
+  transform: translateY(0);
+}
+
+.project-card:hover .image-wrapper img {
+  /* Usando el efecto de desplazamiento hacia abajo de la solicitud anterior */
+  /* Reducimos el desplazamiento para que quepa mejor, ajusta este valor */
+  transform: translateY(70px);
+}
+
+/*WORKS/*
+
+/* --- 2A. ENCABEZADO Y TEXTO INTRODUCTORIO (WORKS) --- */
+
+.works-header-section {
+  display: flex;
+  /* Usamos el padding general para los lados */
+  padding-right: var(--padding-sides);
+  margin-top: 50px;
+
+  /* CAMBIO CLAVE: Aplicamos el offset de 35vw como padding izquierdo aquí */
+  padding-left: 10vw;
+}
+
+/* Alineación del Título: Ahora el título solo necesita ser un bloque */
+.works-title {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: lowercase;
+  /* Eliminamos el margin-left: 35vw; ya que está en el padre */
+  flex-shrink: 0; /* Evita que se encoja */
+  margin-right: 40px; /* Espacio entre el título y el texto */
+  max-width: 300px;
+}
+
+/* Alineación del Texto: Estilo del Index, a la derecha del título */
+.works-intro-text {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  font-family: var(--font-sans);
+  width: 45%;
+  max-width: 600px;
+  margin-left: 0; /* Eliminamos el margen innecesario */
+
+  /* Permite que el texto se encoja si es necesario */
+  flex-grow: 1;
+}
+
+/* --- 3A. GALERÍA DE PROYECTOS (Grid: 3 por fila) --- */
+
+.projects-grid {
+  margin-top: 60px;
+
+  /* CLAVE: Mantenemos el offset de 35vw y reducimos el padding derecho para compensar */
+  padding-left: 10vw;
+  padding-right: 10vw (--padding-sides);
+
+  display: grid;
+  /* CLAVE: Ahora solo necesitamos 3 columnas iguales, ya que el offset está en el padding-left */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+
+  padding-bottom: 80px;
+}
+
+/* Estilo de la Tarjeta del Proyecto (Estática) */
+.projects-grid .project-card-static {
+  grid-column: span 1; /* Asegura que cada tarjeta ocupe una columna de 1fr */
+  text-decoration: none;
+  color: var(--color-text);
+  display: block;
+}
+
+.image-wrapper-static {
+  height: 400px;
+  overflow: hidden; /* CLAVE para que el zoom no se salga */
+}
+
+.image-wrapper-static img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease-out;
+}
+
+/* Información del proyecto debajo (como en la captura) */
+.project-info-static {
+  padding-top: 15px;
+  text-align: left;
+}
+
+.project-info-static h3 {
+  font-size: 1.1rem;
+  margin-bottom: 2px;
+}
+
+.project-info-static .category {
+  font-size: 0.85rem;
+  color: #555;
+}
+
+/* --- EFECTO HOVER (Zoom sutil) --- */
+
+.project-card-static:hover .image-wrapper-static img {
+  transform: scale(1.05); /* Zoom de 5% */
+}
+
+/* --- Responsive Básico para la página de Works --- */
+
+@media (max-width: 1200px) {
+  .works-title {
+    margin-left: 5vw; /* Reducimos el offset en pantallas medianas */
+  }
+  .projects-grid {
+    grid-template-columns: 5vw repeat(2, 1fr); /* 2 proyectos por fila */
+    gap: 25px;
+  }
+  .image-wrapper-static {
+    height: 350px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* El encabezado se apila verticalmente */
+  .works-header-section {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 30px;
+  }
+  .works-title,
+  .works-intro-text {
+    margin-left: 0; /* Eliminamos el offset */
+    width: 100%;
+    max-width: none;
+    padding-right: 0;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr; /* 1 proyecto por fila en móvil */
+    gap: 30px;
+    margin-top: 40px;
+  }
+  .image-wrapper-static {
+    height: 300px;
+  }
+}
+
+/*ABOUT ME /*
+
+/* --- ESTILOS DE PÁGINA ABOUT ME --- */
+
+.about-main-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* Alinea los elementos en la parte superior */
+
+  /* El contenedor principal usa el padding general */
+  padding: 30px var(--padding-sides);
+
+  /* Permitimos que el main crezca si es necesario */
+  flex-grow: 1;
+}
+
+/* === COLUMNA IZQUIERDA: FIJA Y ALINEADA (35vw offset) === */
+
+.about-left-column {
+  /* CLAVE 1: Usamos position: sticky para que se quede visible */
+  position: sticky;
+  top: 0; /* Se pega al top de su padre (main) */
+
+  /* Le damos un ancho fijo, alineado con el offset del diseño */
+  width: 30vw;
+  margin-left: 5vw; /* Margen para que se vea el padding-sides */
+
+  /* Ajustamos el padding para compensar y alinear el texto */
+  padding-top: 20px;
+  padding-right: 20px; /* Separación del contenido de la derecha */
+
+  /* Aseguramos que tenga espacio vertical mínimo */
+  min-height: 80vh;
+}
+
+.about-title {
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: lowercase;
+  margin-bottom: 40px;
+}
+
+.contact-info-block {
+  margin-bottom: 40px;
+}
+
+.contact-info-block h2 {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.contact-info-block p {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  width: 80%; /* Para que no sea tan largo */
+}
+
+/* --- EFECTO HOVER (Inversión de Colores) --- */
+
+.btn-cv-download:hover {
+  /* Inversión de Colores */
+  background-color: var(--color-text); /* Fondo Negro */
+  color: var(--color-background); /* Texto Blanco */
+  cursor: pointer;
+}
+/* --- Estilo específico para el enlace de descarga de CV --- */
+.cv-download-link {
+  /* Hacemos el texto más grueso para que destaque */
+  font-weight: 700;
+  /* Le damos espacio por encima para separarlo de la info corta */
+  margin-top: 20px;
+  /* Y espacio por debajo para separarlo de las redes sociales */
+  margin-bottom: 30px;
+
+  display: block; /* Aseguramos que ocupe todo el ancho para los márgenes */
+  font-size: 0.9rem; /* Mantenemos un tamaño legible */
+}
+.social-links-block a {
+  display: block;
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+}
+
+/* === COLUMNA DERECHA: CON SCROLL Y CONTENIDO LARGO === */
+
+.about-right-column {
+  /* CLAVE 2: Ocupa el espacio restante */
+  flex-grow: 1;
+
+  /* Definimos el ancho máximo para que el texto no se extienda demasiado */
+  max-width: 55%;
+
+  /* Aseguramos que se muestre el contenido largo */
+  padding-top: 20px;
+}
+
+/* Estilo para las imágenes en fila */
+.image-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 40px;
+  /* Fuerza el scroll horizontal en las imágenes si son muy grandes, como en la captura */
+  overflow-x: auto;
+  padding-bottom: 10px; /* Para que no se corte el scrollbar */
+}
+
+.image-row img {
+  width: 33.33%;
+  height: auto;
+  object-fit: cover;
+  flex-shrink: 0; /* Evita que las imágenes se encojan */
+}
+
+/* Estilos de Biografía */
+.bio-text-content {
+  /* Aquí es donde se coloca el contenido más largo */
+  line-height: 1.8;
+}
+
+.bio-text-content p {
+  margin-bottom: 20px;
+  font-size: 1rem;
+}
+
+.cursive-hello {
+  font-family: "Playfair Display", serif; /* Usamos la última serif cursiva que elegimos */
+  font-style: italic;
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+}
+
+/* --- Responsive Básico para About Me --- */
+
+@media (max-width: 1000px) {
+  .about-main-container {
+    flex-direction: column;
+    padding: 20px var(--padding-sides);
+  }
+
+  .about-left-column {
+    /* CLAVE: En móvil, eliminamos el sticky y se comporta como un bloque normal */
+    position: relative;
+    width: 100%;
+    margin-left: 0;
+    margin-bottom: 40px;
+    padding-right: 0;
+    min-height: auto;
+  }
+
+  .about-title {
+    margin-bottom: 20px;
+  }
+
+  .about-right-column {
+    width: 100%;
+    max-width: 100%;
+    padding-top: 0;
+  }
+
+  .image-row img {
+    width: 45%; /* Mostramos solo 2 o 3 imágenes y se permite scroll horizontal */
+  }
+}
+
+/*CONTACT/* 
+/* --- ESTILOS DE PÁGINA CONTACTO (MISMA ESTRUCTURA QUE ABOUT) --- */
+
+.contact-main-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 30px var(--padding-sides);
+  flex-grow: 1;
+}
+
+/* === COLUMNA IZQUIERDA: FIJA (Reutilizamos la lógica del sticky) === */
+
+.contact-left-column {
+  position: sticky;
+  top: 0;
+  width: 30vw;
+  margin-left: 5vw;
+  padding-top: 20px;
+  padding-right: 20px;
+  min-height: 80vh;
+}
+
+.contact-title {
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: lowercase;
+  margin-bottom: 40px;
+}
+
+/* Usamos los mismos estilos .contact-info-block y .social-links-block ya definidos */
+
+.contact-info-block .email-direct {
+  font-size: 0.9rem;
+  margin-top: 20px;
+  color: #555;
+}
+
+/* === COLUMNA DERECHA: FORMULARIO === */
+
+.contact-right-column {
+  flex-grow: 1;
+  max-width: 55%; /* Para que el formulario no sea demasiado ancho */
+  padding-top: 20px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Espacio entre los grupos de formulario */
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: lowercase;
+  margin-bottom: 8px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+  /* Estilo Minimalista del Campo */
+  width: 100%;
+  padding: 10px 15px;
+  border: 1px solid var(--color-text); /* Contorno Negro */
+  background-color: transparent; /* Fondo Transparente/Blanco */
+  color: var(--color-text);
+  font-size: 1rem;
+  font-family: var(--font-sans);
+
+  /* Eliminar el borde y sombra por defecto en focus */
+  outline: none;
+  transition: border-color 0.3s ease;
+
+  /* Pequeño redondeo */
+  border-radius: 4px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  /* Efecto al hacer click/focus */
+  border-color: #555; /* Oscurecer ligeramente el borde */
+}
+
+.form-group textarea {
+  resize: vertical; /* Permite redimensionar verticalmente */
+}
+
+/* Reutilizar el estilo del botón de CV para el botón de Submit */
+.contact-form .btn-cv-download {
+  margin-top: 10px; /* Separación después del campo de mensaje */
+}
+
+/* --- Responsive para Contacto (Mismo que About Me) --- */
+@media (max-width: 1000px) {
+  .contact-main-container {
+    flex-direction: column;
+    padding: 20px var(--padding-sides);
+  }
+
+  .contact-left-column {
+    position: relative; /* Quitar sticky en móvil */
+    width: 100%;
+    margin-left: 0;
+    margin-bottom: 30px;
+    padding-right: 0;
+    min-height: auto;
+  }
+
+  .contact-right-column {
+    width: 100%;
+    max-width: 100%;
+    padding-top: 0;
+  }
+}
+/* --- 4. PIE DE PÁGINA (FOOTER) --- */
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  /* Empuja el footer hacia el final de la columna (body: 100vh) */
+  margin-top: auto;
+  /* Reducimos el padding superior e inferior */
+  padding: 15px var(--padding-sides) 10px;
+  border-top: 1px solid #eee;
+  font-size: 0.7rem; /* Reducimos el tamaño de la fuente */
+}
+
+.center-info {
+  text-align: center;
+}
+
+.cursive {
+  font-family: "Playfair Display", cursive;
+  font-size: 1.2rem; /* Reducimos el tamaño de la fuente */
+  margin-bottom: 3px;
+}
+
+.location {
+  font-size: 0.7rem;
+  color: #666;
+}
+
+.right-info {
+  text-align: right;
+}
