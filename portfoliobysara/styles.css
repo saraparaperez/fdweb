@@ -482,7 +482,7 @@ a {
   gap: 10px;
   margin-bottom: 40px;
   /* Fuerza el scroll horizontal en las imágenes si son muy grandes, como en la captura */
-  overflow-x: auto;
+
   padding-bottom: 10px; /* Para que no se corte el scrollbar */
 }
 
