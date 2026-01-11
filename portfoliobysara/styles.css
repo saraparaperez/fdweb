@@ -711,9 +711,10 @@ a {
 
 .project-about-block h3 {
   font-size: 1rem;
-  text-transform: uppercase;
+  text-transform: lowercase;
   margin-bottom: 10px;
   font-weight: 700;
+  justify-content: left;
 }
 
 .project-about-block p {
@@ -757,6 +758,27 @@ a {
   padding-left: 10px;
 }
 
+/* --- ESTILO DE LA FLECHA DE VOLVER ATRÁS --- */
+
+.back-arrow-link {
+  /* Posición y espaciado */
+  display: inline-block;
+  margin-bottom: 25px; /* Espacio para separarlo del título */
+
+  /* Estilo del texto */
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-transform: lowercase;
+  color: var(--color-text); /* Asegura que tome el color del texto */
+  text-decoration: none; /* Quita el subrayado por defecto */
+
+  /* Transición suave para el hover */
+  transition: opacity 0.3s ease;
+}
+
+.back-arrow-link:hover {
+  opacity: 0.7; /* Ligeramente más transparente al pasar el ratón */
+}
 /* --- Responsive (Asegurar que funcione en móviles) --- */
 @media (max-width: 1000px) {
   /* --- ESTILOS GENERALES DE PÁGINA DE PROYECTO (AJUSTADO PARA SCROLL LOCAL) --- */
