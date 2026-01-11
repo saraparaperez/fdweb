@@ -829,7 +829,8 @@ a {
 
 .cursive {
   font-family: "Playfair Display", cursive;
-  font-size: 1.2rem; /* Reducimos el tamaño de la fuente */
+  text-transform: lowercase;
+  font-size: 0.85rem; /* Reducimos el tamaño de la fuente */
   margin-bottom: 3px;
 }
 
