@@ -765,19 +765,26 @@ a {
   line-height: 1.8;
 }
 
+/* --- Estilos de Biografía (TEXTO JUSTIFICADO) --- */
+
 .bio-text-content p {
   margin-bottom: 20px;
-
   font-size: 0.85rem;
+
+  /* 💡 ESTO ES LO QUE BUSCAS: */
+  text-align: justify;
+
+  /* Opcional: mejora el justificado evitando huecos grandes entre palabras */
+  hyphens: auto;
 }
 
+/* 💡 RECOMENDACIÓN: Mantener el saludo inicial a la izquierda */
+/* El saludo en cursiva suele quedar mejor sin justificar */
 .cursive-hello {
-  font-family: "Playfair Display", serif; /* Usamos la última serif cursiva que elegimos */
-
+  text-align: left;
+  font-family: "Playfair Display", serif;
   font-style: italic;
-
-  font-size: 1.5rem;
-
+  font-size: 1rem;
   margin-bottom: 30px;
 }
 
@@ -910,7 +917,7 @@ a {
 .form-group textarea {
   resize: vertical;
   /* 💡 CAMBIO: Dale una altura mínima para que no se vea "achatado" */
-  min-height: 150px;
+  min-height: 100px;
   padding: 12px 15px;
 }
 
@@ -972,18 +979,18 @@ a {
 .contact-form .btn-cv-download {
   /* 1. HACERLO MÁS GRANDE */
   width: 100%; /* Ocupa todo el ancho del formulario */
-  padding: 15px 30px; /* Más espacio interno (más alto) */
+  padding: 10px 20px; /* Más espacio interno (más alto) */
 
   /* 2. HACERLO REDONDEADO */
   border-radius: 50px; /* Valor alto para bordes tipo "píldora" */
 
   /* Ajustes de posición y texto */
-  margin-top: 25px; /* Un poco más de espacio arriba */
+  margin-top: 0px; /* Un poco más de espacio arriba */
   text-align: center; /* Asegura que el texto quede centrado */
 
   /* Aseguramos que herede la fuente y el peso correctos */
   font-family: var(--font-sans);
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   font-weight: 700;
   text-transform: lowercase;
 }
@@ -1321,4 +1328,86 @@ a {
   opacity: 0; /* CLAVE: Asegura que estén invisibles al inicio */
 
   animation-fill-mode: forwards; /* Mantiene el estado final (opacity: 1) */
+}
+/* --- CORRECCIONES GLOBALES DE RESPONSIVE --- */
+
+@media (max-width: 1024px) {
+  /* Ajustamos el ancho de las columnas en tablets */
+  .about-left-column,
+  .contact-left-column,
+  .project-left-column {
+    width: 40vw; /* Un poco más de ancho para que el texto respire */
+  }
+
+  .about-right-column,
+  .contact-right-column,
+  .project-right-column {
+    max-width: 50%;
+  }
+}
+
+@media (max-width: 768px) {
+  /* 1. Navbar: Más compacta en móvil */
+  .navbar {
+    padding: 10px 5vw;
+  }
+
+  /* 2. Intro Text (Index): En móvil debe ocupar casi todo el ancho */
+  .intro-text {
+    margin-left: 5vw;
+    width: 90%;
+    font-size: 0.95rem; /* Un poco más grande para lectura móvil */
+  }
+
+  /* 3. Carrusel de Proyectos (Index): Quitar el margen excesivo */
+  .project-card:first-child {
+    margin-left: 5vw;
+  }
+
+  /* 4. Estructura de Columnas (About, Contact, Proyectos) */
+  /* Forzamos que todo sea una sola columna */
+  .about-main-container,
+  .contact-main-container,
+  .project-main-container {
+    flex-direction: column;
+    height: auto !important; /* IMPORTANTE: Rompemos el 100vh */
+    overflow: visible !important;
+    padding-top: 20px;
+  }
+
+  .about-left-column,
+  .contact-left-column,
+  .project-left-column,
+  .about-right-column,
+  .contact-right-column,
+  .project-right-column {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    position: relative !important; /* Quitamos el sticky */
+    min-height: auto !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  /* 5. Imágenes en About Me: Que no se desborden */
+  .image-row {
+    flex-wrap: wrap; /* Permite que bajen si no caben */
+  }
+
+  .image-row img {
+    width: calc(50% - 5px); /* Dos por fila en móvil */
+  }
+
+  /* 6. Footer: Apilado para que no se amontone */
+  .footer {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .right-info {
+    text-align: center;
+  }
 }
