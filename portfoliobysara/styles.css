@@ -825,6 +825,7 @@ a {
 
 .experience-list li {
   font-size: 0.85rem;
+  font-family: "Roboto", sans-serif;
   line-height: 1.6;
   margin-bottom: 15px;
   color: var(--color-text);
