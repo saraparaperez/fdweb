@@ -34,6 +34,9 @@ body {
   background-color: var(--color-background);
 
   line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Obliga al body a medir toda la pantalla */
 }
 
 /* === REGLAS PARA LA VISTA DE 100VH (SOLO EN EL INDEX) === */
@@ -610,23 +613,108 @@ a {
 
   /* Le damos espacio por encima para separarlo de la info corta */
 
-  margin-top: 20px;
+  margin-top: 10px;
 
   /* Y espacio por debajo para separarlo de las redes sociales */
 
-  margin-bottom: 30px;
+  margin-bottom: 50px;
 
   display: block; /* Aseguramos que ocupe todo el ancho para los márgenes */
 
   font-size: 0.9rem; /* Mantenemos un tamaño legible */
 }
 
+/* --- REDES SOCIALES (ESPACIADO REDUCIDO) --- */
+
+.social-links-block {
+  /* Añadimos un margen arriba de todo el bloque para separarlo de las skills */
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
 .social-links-block a {
   display: block;
-
   font-size: 0.85rem;
+  /* Reducimos el margen entre ellos */
+  margin-bottom: 5px;
+  /* ELIMINAMOS el padding-block-start: 30px que causaba el hueco */
+  padding-block-start: 0;
 
-  margin-bottom: 8px;
+  transition: opacity 0.3s ease;
+}
+
+.social-links-block a:hover {
+  opacity: 0.6;
+}
+/* --- ESTILOS PARA LA SECCIÓN DE SKILLS (CÍRCULOS SÓLIDOS) --- */
+
+.skills-section {
+  /* Mantenemos la separación y el borde superior */
+  margin-top: 50px;
+  padding-top: 20px;
+  border-top: 1px solid var(--color-text); /* Borde con el color principal */
+  /* Nota: Si tienes definida --color-border, úsala en lugar de --color-text si es más claro. */
+}
+
+/* Título de la sección (ej: Skills y Herramientas) */
+.skills-section h2 {
+  font-size: 0.9rem; /* Reducido para que concuerde con otros títulos de bloque (h2/h3) */
+  font-weight: 700;
+  text-transform: lowercase;
+  font-family: var(
+    --font-sans
+  ); /* Usando Roboto, como el resto de la navegación/detalles */
+  margin-bottom: 15px;
+}
+
+.skill-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Reducimos ligeramente el espacio vertical entre items */
+}
+
+.skill-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Nombre de la habilidad (ej: Figma) */
+.skill-name {
+  font-size: 0.85rem; /* Coincide con el tamaño del texto descriptivo general */
+  font-weight: 400; /* Peso normal, no tan grueso como el título */
+  text-transform: lowercase;
+  font-family: var(--font-sans);
+  flex: 0 0 45%;
+  line-height: 1; /* Aseguramos la alineación vertical con los círculos */
+}
+
+/* Contenedor de los círculos (Flexbox) */
+.skill-dots {
+  display: flex;
+  gap: 6px;
+  flex: 0 0 45%;
+  justify-content: flex-end;
+}
+
+/* Estilo base de cada círculo */
+.dot {
+  width: 7px; /* Círculo ligeramente más pequeño para ser sutil */
+  height: 7px;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+/* Estilo para los círculos rellenos (nivel alcanzado) */
+.dot.filled {
+  background-color: var(--color-text);
+  /* Quitamos el borde aquí para que sea un relleno sólido */
+}
+
+/* Estilo para los círculos vacíos (nivel no alcanzado) */
+.dot.empty {
+  background-color: transparent;
+  border: 1px solid var(--color-text); /* Borde bien definido con el color principal */
 }
 
 /* === COLUMNA DERECHA: CON SCROLL Y CONTENIDO LARGO === */
@@ -790,27 +878,40 @@ a {
 }
 
 /* === COLUMNA DERECHA: FORMULARIO === */
+.contact-left-column {
+  position: sticky;
+  top: 20px; /* Un poco de margen desde arriba */
+  width: 30vw;
+  margin-left: 5vw;
+  padding-top: 20px;
+  padding-right: 20px;
+  /* 💡 CAMBIO: Quitamos el min-height fijo y dejamos que respire */
+  height: fit-content;
+}
 
 .contact-right-column {
   flex-grow: 1;
-
-  max-width: 55%; /* Para que el formulario no sea demasiado ancho */
-
+  max-width: 55%;
   padding-top: 20px;
+  /* 💡 CAMBIO: Aseguramos que el formulario siempre tenga su tamaño natural */
+  display: flex;
+  flex-direction: column;
+  height: auto;
 }
-
 .contact-form {
   display: flex;
-
   flex-direction: column;
-
-  gap: 20px; /* Espacio entre los grupos de formulario */
+  gap: 20px;
+  width: 100%;
+  /* 💡 Asegura que el formulario no se encoja */
+  flex-shrink: 0;
 }
 
-.form-group {
-  display: flex;
-
-  flex-direction: column;
+.form-group textarea {
+  resize: vertical;
+  /* 💡 CAMBIO: Dale una altura mínima para que no se vea "achatado" */
+  min-height: 150px;
+  padding: 12px 15px;
 }
 
 .form-group label {
@@ -866,8 +967,25 @@ a {
 
 /* Reutilizar el estilo del botón de CV para el botón de Submit */
 
+/* --- Estilos específicos para el botón "Send Message" --- */
+
 .contact-form .btn-cv-download {
-  margin-top: 10px; /* Separación después del campo de mensaje */
+  /* 1. HACERLO MÁS GRANDE */
+  width: 100%; /* Ocupa todo el ancho del formulario */
+  padding: 15px 30px; /* Más espacio interno (más alto) */
+
+  /* 2. HACERLO REDONDEADO */
+  border-radius: 50px; /* Valor alto para bordes tipo "píldora" */
+
+  /* Ajustes de posición y texto */
+  margin-top: 25px; /* Un poco más de espacio arriba */
+  text-align: center; /* Asegura que el texto quede centrado */
+
+  /* Aseguramos que herede la fuente y el peso correctos */
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: lowercase;
 }
 
 /* --- Responsive para Contacto (Mismo que About Me) --- */
@@ -1144,6 +1262,9 @@ a {
   /* Empuja el footer hacia el final de la columna (body: 100vh) */
 
   margin-top: auto;
+
+  flex-shrink: 0;   /* Evita que el footer se aplaste */
+}
 
   /* Reducimos el padding superior e inferior */
 
