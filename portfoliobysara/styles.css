@@ -804,6 +804,42 @@ a {
   margin-bottom: 30px;
 }
 
+/* --- BLOQUE DE EXPERIENCIA EN ABOUT --- */
+.experience-block {
+  margin-top: 30px;
+  padding-top: 30px;
+  border-top: 1px solid #eee; /* Una línea muy fina para separar de la bio */
+}
+
+.experience-title {
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: lowercase;
+  margin-bottom: 20px;
+  font-family: var(--font-sans);
+}
+
+.experience-list {
+  list-style: none; /* Quitamos los puntos de la lista */
+  padding: 0;
+}
+
+.experience-list li {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  color: var(--color-text);
+  text-align: left;
+}
+
+/* Estilo para el año o marcador */
+.exp-year {
+  font-weight: 700;
+  margin-right: 10px;
+  font-size: 0.75rem;
+  color: #888; /* Un gris más suave para el año */
+}
+
 /* --- Responsive Ajustado para About Me --- */
 @media (max-width: 1000px) {
   .about-main-container {
