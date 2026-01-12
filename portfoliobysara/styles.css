@@ -814,7 +814,6 @@ a {
 .experience-title {
   font-size: 1rem;
   font-weight: 700;
-  text-transform: lowercase;
   margin-bottom: 20px;
   font-family: var(--font-sans);
 }
