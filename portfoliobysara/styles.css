@@ -1263,9 +1263,7 @@ a {
 
   margin-top: auto;
 
-  flex-shrink: 0;   /* Evita que el footer se aplaste */
-}
-
+  flex-shrink: 0; /* Evita que el footer se aplaste */
   /* Reducimos el padding superior e inferior */
 
   padding: 15px var(--padding-sides) 10px;
