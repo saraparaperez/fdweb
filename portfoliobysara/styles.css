@@ -1300,6 +1300,20 @@ a {
   /* Las imágenes dentro (.project-image) se mantienen igual, solo se desplazan dentro de este contenedor */
 }
 
+.thanks-message {
+  font-family: "Handsome", cursive;
+  color: #000000; /* El azul oscuro de tus notas */
+  font-size: 3rem; /* Grande para que sea el protagonista */
+  text-transform: lowercase;
+  animation: slideInUpFade 1s forwards;
+}
+
+@media (max-width: 768px) {
+  .thanks-message {
+    font-size: 2.5rem;
+  }
+}
+
 /* --- 4. PIE DE PÁGINA (FOOTER) --- */
 
 .footer {
