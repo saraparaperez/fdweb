@@ -734,7 +734,21 @@ a {
     position: relative;
     top: 0;
   }
+  /* 💡 AÑADE ESTO AQUÍ ABAJO PARA REFORZAR LOS MARCOS: */
+  .skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .skill-item {
+    display: inline-block;
+    border: 1px solid var(--color-text) !important; /* Fuerza a que el borde se vea */
+    border-radius: 20px !important; /* Fuerza la redondez */
+    white-space: nowrap; /* Evita que el texto de dentro se rompa en dos líneas */
+  }
 }
+
 /* === COLUMNA DERECHA: CON SCROLL Y CONTENIDO LARGO === */
 
 .about-right-column {
