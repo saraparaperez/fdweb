@@ -599,7 +599,7 @@ a {
 }
 
 .contact-info-block {
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 .contact-info-block h2 {
@@ -641,7 +641,7 @@ a {
 
   /* Y espacio por debajo para separarlo de las redes sociales */
 
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 
   display: block; /* Aseguramos que ocupe todo el ancho para los márgenes */
 
@@ -670,77 +670,71 @@ a {
 .social-links-block a:hover {
   opacity: 0.6;
 }
-/* --- ESTILOS PARA LA SECCIÓN DE SKILLS (CÍRCULOS SÓLIDOS) --- */
-
-.skills-section {
-  /* Mantenemos la separación y el borde superior */
-  margin-top: 50px;
-  padding-top: 20px;
-  border-top: 1px solid var(--color-text); /* Borde con el color principal */
-  /* Nota: Si tienes definida --color-border, úsala en lugar de --color-text si es más claro. */
+/* --- 1. ESTRUCTURA DE COLUMNAS (RESTABLECER) --- */
+.about-main-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px var(--padding-sides);
+  flex-grow: 1;
+  gap: 40px;
 }
 
-/* Título de la sección (ej: Skills y Herramientas) */
+.about-left-column {
+  position: sticky;
+  top: 20px;
+  width: 30vw;
+  height: fit-content;
+}
+
+.about-right-column {
+  flex-grow: 1;
+  max-width: 55%;
+}
+
+/* --- 2. NUEVA SECCIÓN DE SKILLS (CÁPSULAS) --- */
+.skills-section {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+}
+
 .skills-section h2 {
-  font-size: 0.9rem; /* Reducido para que concuerde con otros títulos de bloque (h2/h3) */
+  font-size: 0.9rem;
   font-weight: 700;
   text-transform: lowercase;
-  font-family: var(
-    --font-sans
-  ); /* Usando Roboto, como el resto de la navegación/detalles */
   margin-bottom: 15px;
 }
 
 .skill-list {
   display: flex;
-  flex-direction: column;
-  gap: 10px; /* Reducimos ligeramente el espacio vertical entre items */
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
 .skill-item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-/* Nombre de la habilidad (ej: Figma) */
-.skill-name {
-  font-size: 0.85rem; /* Coincide con el tamaño del texto descriptivo general */
-  font-weight: 400; /* Peso normal, no tan grueso como el título */
-  text-transform: lowercase;
   font-family: var(--font-sans);
-  flex: 0 0 45%;
-  line-height: 1; /* Aseguramos la alineación vertical con los círculos */
+  font-size: 0.75rem;
+  color: var(--color-text);
+  border: 1px solid var(--color-text);
+  padding: 5px 12px;
+  border-radius: 20px;
+  text-transform: lowercase;
+  display: inline-block; /* Asegura que se comporte como cápsula */
 }
 
-/* Contenedor de los círculos (Flexbox) */
-.skill-dots {
-  display: flex;
-  gap: 6px;
-  flex: 0 0 45%;
-  justify-content: flex-end;
+/* --- 3. RESPONSIVE (PARA QUE NO SE ROMPA EN MÓVIL) --- */
+@media (max-width: 1000px) {
+  .about-main-container {
+    flex-direction: column;
+  }
+  .about-left-column,
+  .about-right-column {
+    width: 100%;
+    max-width: 100%;
+    position: relative;
+    top: 0;
+  }
 }
-
-/* Estilo base de cada círculo */
-.dot {
-  width: 7px; /* Círculo ligeramente más pequeño para ser sutil */
-  height: 7px;
-  border-radius: 50%;
-  transition: background-color 0.3s ease;
-}
-
-/* Estilo para los círculos rellenos (nivel alcanzado) */
-.dot.filled {
-  background-color: var(--color-text);
-  /* Quitamos el borde aquí para que sea un relleno sólido */
-}
-
-/* Estilo para los círculos vacíos (nivel no alcanzado) */
-.dot.empty {
-  background-color: transparent;
-  border: 1px solid var(--color-text); /* Borde bien definido con el color principal */
-}
-
 /* === COLUMNA DERECHA: CON SCROLL Y CONTENIDO LARGO === */
 
 .about-right-column {
